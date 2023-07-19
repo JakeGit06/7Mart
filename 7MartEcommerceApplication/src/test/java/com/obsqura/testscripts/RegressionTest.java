@@ -7,7 +7,7 @@ import com.obsqura.listeners.reportListners;
 
 @Listeners(reportListners.class)
 public class RegressionTest extends TestHelper {
-	@Test
+	//@Test
 	public void f() {
 
 	}

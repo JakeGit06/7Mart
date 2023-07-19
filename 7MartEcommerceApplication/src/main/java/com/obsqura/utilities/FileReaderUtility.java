@@ -9,7 +9,8 @@ import java.util.Properties;
 public class FileReaderUtility {
 	private Properties properties;
 	String path = System.getProperty("user.dir");
-	final String propertyFilePath=path+"//src//main//resources//Configuration.properties";
+	final String propertyFilePath = path + "//src//main//resources//Configuration.properties";
+
 	public FileReaderUtility() {
 		BufferedReader reader;
 		try {
@@ -65,5 +66,29 @@ public class FileReaderUtility {
 			return Long.parseLong(implicitlyWait);
 		else
 			throw new RuntimeException("implicitlyWait not specified in the Configuration.properties file.");
+	}
+
+	public long getExplicitWait() {
+		String explicitlyWait = properties.getProperty("explicitlyWait");
+		if (explicitlyWait != null)
+			return Long.parseLong(explicitlyWait);
+		else
+			throw new RuntimeException("ExplicitlyWait not specified in the Configuration.properties file.");
+	}
+
+	public long getFluentWaitTimeOut() {
+		String timeOut = properties.getProperty("timeOut");
+		if (timeOut != null)
+			return Long.parseLong(timeOut);
+		else
+			throw new RuntimeException("FluentWait timeOut not specified in the Configuration.properties file.");
+	}
+
+	public long getFluentWaitPollingTime() {
+		String pollingTime = properties.getProperty("pollingTime");
+		if (pollingTime != null)
+			return Long.parseLong(pollingTime);
+		else
+			throw new RuntimeException("FluentWait pollingTime not specified in the Configuration.properties file.");
 	}
 }

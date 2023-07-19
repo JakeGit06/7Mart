@@ -27,8 +27,8 @@ public class TestHelper {
 	public void browserLaunching(@Optional("chrome") String browser) {
 		FileReaderUtility fr = new FileReaderUtility();
 		if (browser.equalsIgnoreCase("chrome")) {
-			WebDriverManager.chromedriver().setup();
-			//System.setProperty("webdriver.chrome.driver", fr.getChromeDriverPath());
+			//WebDriverManager.chromedriver().setup();
+			System.setProperty("webdriver.chrome.driver", fr.getChromeDriverPath());
 			driver = new ChromeDriver();
 		} 
 		else if (browser.equalsIgnoreCase("edge")) {

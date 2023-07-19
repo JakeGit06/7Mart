@@ -30,7 +30,7 @@ public class ExcelUtility {
 
 	public ExcelUtility(String filename) throws IOException {
 		String path = System.getProperty("user.dir");
-		String filePath = path+"\\src\\test\\resources\\testdata\\" + filename;
+		String filePath = path + "\\src\\test\\resources\\testdata\\" + filename;
 		FileInputStream f = new FileInputStream(filePath);
 		XSSFWorkbook w = new XSSFWorkbook(f);
 		sh = w.getSheet("Sheet1");
